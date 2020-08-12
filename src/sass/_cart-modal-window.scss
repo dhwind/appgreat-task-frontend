@@ -1,0 +1,172 @@
+.cart-modal-window {
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10000;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    &__cart {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 500px;
+        position: fixed;
+        background-color: white;
+        margin: 20px auto;
+        padding: 20px 40px 20px 30px;
+
+        &__close {
+            left: 92%;
+            top: 0;
+            cursor: pointer;
+            color: $empty-cart-color;
+            font-size: 50px;
+            position: absolute;
+            margin-top: 5px;
+            padding: 5px;
+    
+            &:hover {
+                transition: 0.5s;
+                color: black;
+            }
+    
+        }
+
+        &__empty {
+            display: block;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 900;
+            font-size: 25px;
+            width: 80%;
+            padding: 20px;
+            margin-right: 35px;
+            margin-bottom: 20px;
+            color: $empty-cart-color;
+
+            &__inactive {
+                display: none;
+            }
+        }
+
+        &__total-price {
+            font-family: 'Roboto', sans-serif;
+            font-size: 19px;
+            font-weight: bold;
+            color: $total-price-color;
+            margin-top: 30px;
+            margin-right: 30px;
+
+            &__inactive {
+                display: none;
+            }
+        }
+
+        &__place-order {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-right: 30px;
+            padding: 10px;
+            border: none;
+            background-color: $place-order-color;
+            color: white;
+
+            &:hover {
+                background-color: $place-order-color-hover;
+            }
+
+            &__inactive {
+
+                display: none;
+            }
+        }
+
+        .product-field {
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+            margin-right: 35px;
+
+            .selected-product {
+                font-family: 'Roboto', sans-serif;
+                display: grid;
+                align-items: center;
+                grid-template-columns: 0.5fr 1fr 2fr 0.5fr 1fr 0.5fr;
+                width: 100%;
+                border-top: 1px solid $order-item-border;
+                border-bottom: 1px solid $order-item-border;
+                margin-bottom: 15px;
+                padding: 3px 0;
+
+                &__count {
+                    text-align: end;
+                    margin-right: 15px;
+                    font-weight: bold;
+                    font-size: 16px;
+                    color: $total-price-color;
+                }
+
+                &__image {
+                    width: 40px;
+                    height: 50px;
+                }
+
+                &__border {
+                    height: 20px;
+                    border-left: 1px solid gray;
+                }
+
+                &__title {
+                    
+                    padding: 5px;
+                    font-size: 16px;
+                    font-weight: 700;
+                    color: $total-price-color;
+                    word-wrap: break-word;
+
+                }
+
+                &__price {
+                    text-align: center;
+                    width: 10%;
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: $total-price-color;
+
+                }
+
+                &__remove {
+                    align-self: flex-start;
+                    display: flex;
+                    justify-content: flex-end;
+                    
+
+                    button {
+                        
+                        margin: 0;
+                        height: 30px;
+                        font-size: 19px;
+                        font-weight: 700;
+                        color: white;
+                        background-color: $light-gray-color;
+                        border: none;
+                        border-radius: 2%;
+
+                        &:hover {
+                            background-color: $light-gray-color-hover;
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+
+}

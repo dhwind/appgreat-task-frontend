@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route } from 'react-router-dom';
+import Header from './components/header/Header';
+import ProductsPage from './components/products-page/ProductsPage';
+import OrdersPage from './components/orders-page/OrdersPage';
+import AddProductsPage from './components/add-product-page/AddProductPage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component<any> {
+  render() {
+    return (<div className="app-wrapper">
+        <Header />
+        <Route exact path="/" render={() => <ProductsPage />} />
+        <Route exact path="/products" render={() => <ProductsPage />} />
+        <Route exact path="/orders" render={() => <OrdersPage />} />
+        <Route exact path="/add-product" render={() => <AddProductsPage />} />
+    </div>);
+  }
 }
 
 export default App;
